@@ -66,8 +66,10 @@ yarn add next-connect
          "presets": [
            [
              "next/babel",
-             "preset-env": {
-             	"modules": "commonjs"
+             {
+              "preset-env": {
+                "modules": "commonjs"
+              }
              }
            ]
          ]
@@ -90,7 +92,7 @@ yarn add next-connect
    }
    ```
 
-4. Write this code somewhere in your project and import to test your API Route handler.
+4. Write this code somewhere in your project and import to test your API Route handler (an example).
 
 
    ```js
@@ -115,7 +117,7 @@ yarn add next-connect
    }
    ```
 
-5. Use that helper function to test our API route handler.
+5. Use that helper function to test our API route handler (an example).
 
    ```js
    // __test__/hello-api.test.js
@@ -124,10 +126,10 @@ yarn add next-connect
 
    describe("GET /api/hello", () => {
 
-     it("Returns 200 OK status", async () => {	    // <-- notice the async
+     it("Returns 200 OK status", async () => {    // <-- notice the async
        await testClient(handler)
        	.get("/api/hello")
-       	.expect(200);                           // <-- supertest's API
+       	.expect(200);                             // <-- supertest's API
      });
 
    });
